@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+
+  <!-- Link to the main stylesheet for consistent design -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION BAR SECTION
+       Contains links to all pages in the project
+  ========================== -->
+  <nav>
+    <ul>
+      <li><a href="../html_files/index.html">Game</a></li>
+      <li><a href="../html_files/signup.html">Register</a></li>
+      <li><a href="../html_files/login.html">Login</a></li>
+      <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- =========================
+       SIGNUP FORM WRAPPER
+       Holds the entire registration form
+  ========================== -->
+  <div class="wrapper">
+    <h1>Signup</h1>
+
+    <!-- Error display area for JavaScript validation messages -->
+    <p id="error-box"></p>
+
+    <!-- =========================
+         MAIN SIGNUP FORM
+         Users enter their details here
+    ========================== -->
+    <form id="form">
+
+      <!-- These two divs show text feedback (validation or success) -->
+      <div id="error-message"></div>
+      <div id="success-message"></div>
+
+      <!-- USER INPUT FIELDS -->
+      <div>
+        <!-- First name input -->
+        <input type="text" id="firstname-input" placeholder="Firstname" required>
+      </div>
+
+      <div>
+        <!-- Email input -->
+        <input type="text" id="email-input" placeholder="Email Address" required>
+      </div>
+
+      <div>
+        <!-- Age input (number only) -->
+        <input type="number" id="age-input" placeholder="Age" min="1" max="120" required>
+      </div>
+
+      <div>
+        <!-- Password input -->
+        <input type="password" id="password-input" placeholder="Password" required>
+      </div>
+
+      <div>
+        <!-- Confirm password input -->
+        <input type="password" id="repeat-password-input" placeholder="Repeat password" required>
+      </div>
+
+      <!-- Submit button for signup -->
+      <button type="submit">Sign up</button>
+    </form>
+
+    <!-- Redirect link for users who already have an account -->
+    <p>Already signed up? <a href="login.html">Login</a></p>
+  </div>
+
+  <!-- =========================
+       JAVASCRIPT LINKS
+       - auth.js handles form validation & registration logic
+       - transitions.js can handle visual effects or page animations
+  ========================== -->
+  <script type="module" src="../js_files/auth.js"></script>
+  <script src="../js_files/transitions.js"></script>
+
+</body>
+</html>

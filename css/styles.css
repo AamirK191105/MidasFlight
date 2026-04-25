@@ -1,0 +1,222 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body {
+ background: linear-gradient(0deg, #0046FF, #FF9013);
+ font-family: "Comic Sans MS", sans-serif;
+ min-height: 100vh;
+ animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Fade out when leaving page */
+body.fade-out {
+    animation: fadeOut 0.3s ease-out;
+    opacity: 0;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/* Navigation */
+nav {
+ background-color: rgba(0, 0, 0, 0.5);
+ padding: 1rem 2rem;
+ z-index: 100;
+}
+nav ul {
+ list-style: none;
+ display: flex;
+ gap: 2rem;
+ margin: 0;
+ padding: 0;
+}
+nav a {
+ color: #ffffff;
+ text-decoration: none;
+ font-size: 1.1rem;
+ transition: color 0.3s;
+}
+nav a:hover {
+ color: #ffd700;
+}
+h1 {
+ color: lightgrey;
+ font-size: 2.5rem;
+ text-shadow: 3px 3px 6px black;
+ text-align: center;
+ margin-top: 2rem;
+ margin-bottom: 0.5rem;
+}
+h2 {
+ color: lightgrey;
+ font-size: 1rem;
+ text-shadow: 3px 3px 6px black;
+ text-align: center;
+ margin-bottom: 1.5rem;
+}
+/* Container (Used for Leaderboard/Forms) */
+.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 2rem;
+}
+/* Grid */
+.grid-2 {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 2rem;
+}
+.box {
+ background-color: #2a2a2a;
+ padding: 2rem;
+ border-radius: 8px;
+}
+/* Forms */
+.form-container {
+ max-width: 400px;
+ margin: 0 auto;
+ background-color: #2a2a2a;
+ padding: 2rem;
+ border-radius: 8px;
+}
+input,
+button {
+ width: 100%;
+ padding: 0.75rem;
+ margin-bottom: 1rem;
+ border: none;
+ border-radius: 4px;
+}
+input {
+ background-color: #3a3a3a;
+ color: #ffffff;
+}
+button {
+ background-color: #ffd700;
+ color: #000000;
+ cursor: pointer;
+ font-weight: bold;
+}
+button:hover {
+ background-color: #ffed4e;
+}
+/* Leaderboard container */
+.leaderboard {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.leaderboard th,
+.leaderboard td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #3a3a3a;
+  color: white;
+}
+.leaderboard th {
+  background-color: #111;
+  color: #00c6ff;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.leaderboard tr:nth-child(even) {
+  background-color: #242424;
+}
+.leaderboard tr:hover {
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+/* Title */
+h1 {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: #00c6ff;
+  letter-spacing: 1px;
+}
+ #error-message {
+   display: none;
+   color: #721c24;
+   padding: 12px;
+   margin-bottom: 15px;
+   background-color: #f8d7da;
+   border: 1px solid #f5c6cb;
+   border-radius: 4px;
+ }
+ #success-message {
+   display: none;
+   color: #155724;
+   padding: 12px;
+   margin-bottom: 15px;
+   background-color: #d4edda;
+   border: 1px solid #c3e6cb;
+   border-radius: 4px;
+ }
+
+ /* User Section with Sign Out Button */
+.user-section {
+  text-align: center;
+  margin: 1rem auto;
+  padding: 0.75rem;
+  background-color: rgba(42, 42, 42, 0.8);
+  border-radius: 8px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#user-display {
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#signout-btn {
+  background-color: #ff4444;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background-color 0.3s;
+  width: auto;
+  margin: 0;
+}
+
+#signout-btn:hover {
+  background-color: #cc0000;
+}
+
+/* GAME BOARD STYLING - CENTERED WITH DARK BACKDROP */
+#board {
+    display: block;
+    margin: 0 auto 2rem auto; /* Center horizontally */
+    background-color: #0a0a0a; /* Very dark backdrop for visibility */
+    border: 5px solid #ffd700; /* Gold border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); /* Deep shadow for depth */
+}

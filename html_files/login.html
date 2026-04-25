@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Midas Flight</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="../html_files/index.html">Game</a></li>
+      <li><a href="../html_files/signup.html">Register</a></li>
+      <li><a href="../html_files/login.html">Login</a></li>
+      <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
+    </ul>
+  </nav>
+
+  <div class="form-container">
+    <h1>Login</h1>
+    
+    <div id="error-message"></div>
+    <div id="success-message"></div>
+    
+    <form id="form">
+      <input 
+        type="email" 
+        id="email-input" 
+        placeholder="Email"
+        required
+      >
+      
+      <input 
+        type="password" 
+        id="password-input" 
+        placeholder="Password"
+        required
+      >
+      
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Guest Login Button -->
+    <div class="guest-option">
+      <p style="text-align: center; color: #888; margin: 15px 0;">OR</p>
+      <button id="guest-btn" class="guest-button">Continue as Guest</button>
+      <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 10px;">
+        Note: Guest scores won't be saved to the leaderboard
+      </p>
+    </div>
+    
+    <p style="text-align: center; margin-top: 15px; color: white;">
+      Don't have an account? <a href="signup.html" style="color: #ffd700;">Sign Up</a>
+    </p>
+  </div>
+
+  <script src="../js_files/transitions.js"></script>
+  <script type="module" src="../js_files/auth.js"></script>
+  <script type="module">
+    // Guest login functionality - UPDATED to use sessionStorage
+    document.getElementById("guest-btn").addEventListener("click", () => {
+      const guestUser = {
+        firstname: "Guest",
+        email: "guest@temporary.com",
+        isGuest: true
+      };
+      sessionStorage.setItem("currentuser", JSON.stringify(guestUser));
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

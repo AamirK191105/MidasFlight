@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="../html_files/index.html">Game</a></li>
+        <li><a href="../html_files/signup.html">Register</a></li>
+        <li><a href="../html_files/login.html">Login</a></li>
+        <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
+      </ul>
+    </nav>
+
+    <h1>Leaderboard</h1>
+
+    <div class="leaderboard">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <script type="module" src="../js_files/leaderboards.js"></script>
+    <script src="../js_files/transitions.js">
+
+      document.getElementById("guest-btn").addEventListener("click", () => {
+        const guestUser = {
+          firstname: "Guest",
+          email: "guest@temporary.com",
+          isGuest: true
+        };
+        sessionStorage.setItem("currentuser", JSON.stringify(guestUser));
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

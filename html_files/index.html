@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Midas Flight - Game</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="../html_files/index.html">Game</a></li>
+      <li><a href="../html_files/signup.html">Register</a></li>
+      <li><a href="../html_files/login.html">Login</a></li>
+      <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- User Info and Sign Out Section -->
+  <div class="user-section">
+    <span id="user-display"></span>
+    <button id="signout-btn" style="display: none;">Sign Out</button>
+  </div>
+
+  <h1>Midas Flight:</h1>
+  <h2>The Escape from Capitalism.</h2>
+
+  <!-- How to Play Section -->
+  <div class="how-to-play">
+    <h3>How to Play</h3>
+    <div class="instructions">
+      <p><strong>Controls:</strong> Press <kbd>SPACE</kbd> or <kbd>↑ UP ARROW</kbd> to jump</p>
+      <p><strong>Objective:</strong> Navigate through the pipes without crashing</p>
+      <p><strong>Scoring:</strong> Earn 1 point for each pipe pair you pass</p>
+      <p><strong>Game Over:</strong> Press <kbd>SPACE</kbd> to restart</p>
+    </div>
+  </div>
+
+  <canvas id="board"></canvas>
+
+  <script src="../js_files/transitions.js"></script>
+  <script type="module" src="../js_files/midasflight.js"></script>
+  <script>
+    // Display user info and sign out button
+    const currentUser = JSON.parse(sessionStorage.getItem("currentuser"));
+    const userDisplay = document.getElementById("user-display");
+    const signoutBtn = document.getElementById("signout-btn");
+
+    if (!currentUser) {
+      // No user logged in - redirect to login page
+      window.location.href = "login.html";
+    } else if (currentUser.isGuest) {
+      // Guest user
+      userDisplay.textContent = "Playing as Guest";
+    } else {
+      // Registered user
+      userDisplay.textContent = `Welcome, ${currentUser.firstname}!`;
+      signoutBtn.style.display = "inline-block";
+    }
+
+    // Sign out functionality
+    signoutBtn.addEventListener("click", () => {
+      sessionStorage.removeItem("currentuser");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
