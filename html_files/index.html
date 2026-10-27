@@ -2,41 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Midas Flight - Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Midas Flight, a fast-paced Flappy Bird-style arcade game.">
+  <title>Play Midas Flight</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav>
-    <ul>
-      <li><a href="../html_files/index.html">Game</a></li>
+    <ul aria-label="Primary navigation">
+      <li><a href="../html_files/index.html" aria-current="page">Game</a></li>
       <li><a href="../html_files/signup.html">Register</a></li>
       <li><a href="../html_files/login.html">Login</a></li>
       <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
     </ul>
   </nav>
 
-  <!-- User Info and Sign Out Section -->
-  <div class="user-section">
-    <span id="user-display"></span>
-    <button id="signout-btn" style="display: none;">Sign Out</button>
-  </div>
+  <main class="game-shell">
+    <header class="page-heading">
+      <h1>Midas Flight</h1>
+      <h2>The escape from capitalism.</h2>
+    </header>
 
-  <h1>Midas Flight:</h1>
-  <h2>The Escape from Capitalism.</h2>
-
-  <!-- How to Play Section -->
-  <div class="how-to-play">
-    <h3>How to Play</h3>
-    <div class="instructions">
-      <p><strong>Controls:</strong> Press <kbd>SPACE</kbd> or <kbd>↑ UP ARROW</kbd> to jump</p>
-      <p><strong>Objective:</strong> Navigate through the pipes without crashing</p>
-      <p><strong>Scoring:</strong> Earn 1 point for each pipe pair you pass</p>
-      <p><strong>Game Over:</strong> Press <kbd>SPACE</kbd> to restart</p>
+    <div class="user-section" aria-live="polite">
+      <span id="user-display"></span>
+      <button id="signout-btn" type="button" style="display: none;">Sign out</button>
     </div>
-  </div>
 
-  <canvas id="board"></canvas>
+    <section class="how-to-play" aria-labelledby="how-to-play-title">
+      <h3 id="how-to-play-title">How to play</h3>
+      <div class="instructions">
+        <p><strong>Controls:</strong> Press <kbd>Space</kbd> or <kbd>Up Arrow</kbd> to fly</p>
+        <p><strong>Objective:</strong> Navigate through the pipes and collect coins</p>
+        <p><strong>Scoring:</strong> Build combos, pass pipes, and collect coins</p>
+        <p><strong>Restart:</strong> Press <kbd>Space</kbd> after game over</p>
+      </div>
+    </section>
+
+    <canvas id="board" width="750" height="650" aria-label="Midas Flight game board"></canvas>
+  </main>
 
   <script src="../js_files/transitions.js"></script>
   <script type="module" src="../js_files/midasflight.js"></script>

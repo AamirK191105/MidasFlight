@@ -2,23 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Leaderboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leaderboard - Midas Flight</title>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
   <body>
     <nav>
-      <ul>
+      <ul aria-label="Primary navigation">
         <li><a href="../html_files/index.html">Game</a></li>
         <li><a href="../html_files/signup.html">Register</a></li>
         <li><a href="../html_files/login.html">Login</a></li>
-        <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
+        <li><a href="../html_files/leaderboards.html" aria-current="page">Leaderboard</a></li>
       </ul>
     </nav>
 
-    <h1>Leaderboard</h1>
+    <main class="page-container">
+    <header class="page-heading">
+      <h1>Leaderboard</h1>
+      <h2>See who has mastered the golden skies.</h2>
+    </header>
 
-    <div class="leaderboard">
+    <section class="leaderboard" aria-labelledby="leaderboard-title">
+      <h2 id="leaderboard-title" class="sr-only">Top Midas Flight scores</h2>
       <table id="table">
         <thead>
           <tr>
@@ -28,7 +34,8 @@
         </thead>
         <tbody id="tbody"></tbody>
       </table>
-    </div>
+    </section>
+    </main>
 
     <script type="module" src="../js_files/leaderboards.js"></script>
     <script src="../js_files/transitions.js">

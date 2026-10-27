@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create an account - Midas Flight</title>
 
   <!-- Link to the main stylesheet for consistent design -->
   <link rel="stylesheet" href="../css/styles.css">
@@ -16,9 +17,9 @@
        Contains links to all pages in the project
   ========================== -->
   <nav>
-    <ul>
+    <ul aria-label="Primary navigation">
       <li><a href="../html_files/index.html">Game</a></li>
-      <li><a href="../html_files/signup.html">Register</a></li>
+      <li><a href="../html_files/signup.html" aria-current="page">Register</a></li>
       <li><a href="../html_files/login.html">Login</a></li>
       <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
     </ul>
@@ -28,8 +29,9 @@
        SIGNUP FORM WRAPPER
        Holds the entire registration form
   ========================== -->
-  <div class="wrapper">
-    <h1>Signup</h1>
+  <main class="page-container">
+  <section class="wrapper" aria-labelledby="signup-title">
+    <h1 id="signup-title">Create your account</h1>
 
     <!-- Error display area for JavaScript validation messages -->
     <p id="error-box"></p>
@@ -45,30 +47,20 @@
       <div id="success-message"></div>
 
       <!-- USER INPUT FIELDS -->
-      <div>
-        <!-- First name input -->
-        <input type="text" id="firstname-input" placeholder="Firstname" required>
-      </div>
+      <div><label for="firstname-input">First name</label>
+        <input type="text" id="firstname-input" autocomplete="given-name" placeholder="Your first name" required></div>
 
-      <div>
-        <!-- Email input -->
-        <input type="text" id="email-input" placeholder="Email Address" required>
-      </div>
+      <div><label for="email-input">Email address</label>
+        <input type="email" id="email-input" autocomplete="email" placeholder="you@example.com" required></div>
 
-      <div>
-        <!-- Age input (number only) -->
-        <input type="number" id="age-input" placeholder="Age" min="1" max="120" required>
-      </div>
+      <div><label for="age-input">Age</label>
+        <input type="number" id="age-input" autocomplete="off" placeholder="Your age" min="1" max="120" required></div>
 
-      <div>
-        <!-- Password input -->
-        <input type="password" id="password-input" placeholder="Password" required>
-      </div>
+      <div><label for="password-input">Password</label>
+        <input type="password" id="password-input" autocomplete="new-password" placeholder="Create a password" required></div>
 
-      <div>
-        <!-- Confirm password input -->
-        <input type="password" id="repeat-password-input" placeholder="Repeat password" required>
-      </div>
+      <div><label for="repeat-password-input">Confirm password</label>
+        <input type="password" id="repeat-password-input" autocomplete="new-password" placeholder="Repeat your password" required></div>
 
       <!-- Submit button for signup -->
       <button type="submit">Sign up</button>
@@ -76,7 +68,8 @@
 
     <!-- Redirect link for users who already have an account -->
     <p>Already signed up? <a href="login.html">Login</a></p>
-  </div>
+  </section>
+  </main>
 
   <!-- =========================
        JAVASCRIPT LINKS

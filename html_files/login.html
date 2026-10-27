@@ -2,37 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login - Midas Flight</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in - Midas Flight</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <nav>
-    <ul>
+    <ul aria-label="Primary navigation">
       <li><a href="../html_files/index.html">Game</a></li>
       <li><a href="../html_files/signup.html">Register</a></li>
-      <li><a href="../html_files/login.html">Login</a></li>
+      <li><a href="../html_files/login.html" aria-current="page">Login</a></li>
       <li><a href="../html_files/leaderboards.html">Leaderboard</a></li>
     </ul>
   </nav>
 
-  <div class="form-container">
-    <h1>Login</h1>
+  <main class="page-container">
+  <section class="form-container" aria-labelledby="login-title">
+    <h1 id="login-title">Log in</h1>
     
-    <div id="error-message"></div>
-    <div id="success-message"></div>
+    <div id="error-message" role="alert" aria-live="assertive"></div>
+    <div id="success-message" role="status" aria-live="polite"></div>
     
     <form id="form">
+      <label for="email-input">Email address</label>
       <input 
         type="email" 
         id="email-input" 
-        placeholder="Email"
+        autocomplete="email"
+        placeholder="you@example.com"
         required
       >
       
+      <label for="password-input">Password</label>
       <input 
         type="password" 
         id="password-input" 
-        placeholder="Password"
+        autocomplete="current-password"
+        placeholder="Your password"
         required
       >
       
@@ -51,7 +57,8 @@
     <p style="text-align: center; margin-top: 15px; color: white;">
       Don't have an account? <a href="signup.html" style="color: #ffd700;">Sign Up</a>
     </p>
-  </div>
+  </section>
+  </main>
 
   <script src="../js_files/transitions.js"></script>
   <script type="module" src="../js_files/auth.js"></script>
